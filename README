@@ -1,18 +1,128 @@
 
 This test takes around 300MB space in /tmp/
 
-mk clean; mk all ; rm /tmp/test.file /tmp/test.readcontents; touch /tmp/test.file; ./6.pwriter10 /tmp/test.file &  echo 'echo kill>/proc/'$apid'/note'; ./6.reader10 /tmp/test.file /tmp/test.readcontents
+; mk clean; mk all ; rm /tmp/test.file /tmp/test.readcontents; touch /tmp/test.file; ./6.reader10 /tmp/test.file /tmp/test.readcontents & echo 'echo kill>/proc/'$apid'/note'; ./6.pwriter10 /tmp/test.file
 rm -f *.[0568qv] *.a[0568qv] y.tab.? lex.yy.c y.debug y.output [0568qv].??* writer10 reader10 brdstr10 pwriter10 $CLEANFILES
 6c -FTVw writer10.c
 6c -FTVw reader10.c
 6c -FTVw brdstr10.c
 6c -FTVw pwriter10.c
 6l  -o 6.writer10 writer10.6
-6l  -o 6.brdstr10 brdstr10.6
 6l  -o 6.reader10 reader10.6
 6l  -o 6.pwriter10 pwriter10.6
-echo kill>/proc/27518150/note
-iters=306978 n=198 strlen(buf)=176
-iters=443104 n=187 strlen(buf)=176
-iters=450406 n=154 strlen(buf)=132
-iters=498632 n=187 strlen(buf)=165
+6l  -o 6.brdstr10 brdstr10.6
+echo kill>/proc/27518709/note
+iters=53806 n=198 strlen(buf)=176
+iters=73726 n=220 strlen(buf)=198
+iters=75675 n=220 strlen(buf)=198
+iters=77713 n=220 strlen(buf)=198
+iters=79835 n=165 strlen(buf)=143
+iters=86161 n=242 strlen(buf)=220
+iters=88697 n=198 strlen(buf)=176
+iters=89770 n=198 strlen(buf)=176
+iters=92099 n=231 strlen(buf)=209
+iters=93517 n=231 strlen(buf)=209
+iters=96050 n=220 strlen(buf)=198
+iters=96640 n=198 strlen(buf)=176
+iters=100242 n=209 strlen(buf)=187
+iters=100430 n=165 strlen(buf)=143
+iters=100491 n=198 strlen(buf)=176
+iters=101726 n=220 strlen(buf)=198
+iters=102100 n=198 strlen(buf)=176
+iters=105591 n=209 strlen(buf)=187
+iters=113191 n=198 strlen(buf)=176
+iters=118188 n=231 strlen(buf)=209
+iters=118528 n=220 strlen(buf)=198
+iters=118915 n=198 strlen(buf)=176
+iters=119760 n=209 strlen(buf)=198
+iters=121908 n=209 strlen(buf)=187
+iters=121914 n=253 strlen(buf)=231
+iters=124651 n=198 strlen(buf)=176
+iters=129985 n=220 strlen(buf)=198
+iters=130163 n=209 strlen(buf)=187
+iters=239103 n=198 strlen(buf)=176
+iters=246343 n=198 strlen(buf)=176
+iters=258089 n=176 strlen(buf)=154
+;
+
+; sed -n '/iters=53806/,$p' /tmp/test.readcontents | xd -c
+0000000   .  i  t  e  r  s  =  5  3  8  0  6     i  n  p
+0000010   u  t     o  f  f  s  e  t  =  1  0  4  7  7  9
+0000020   4  0     o  u  t  p  u  t     o  f  f  s  e  t
+0000030   =  1  4  7  8  2  0  6  7  ,     n  =  1  9  8
+0000040      s  t  r  l  e  n  (  b  u  f  )  =  1  7  6
+0000050  \n  .  0  1  2  3  4  5  6  7  8  9 \n  0  1  2
+0000060   3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7
+0000070   8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1
+0000080   2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6
+0000090   7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0
+00000a0   1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5
+00000b0   6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n
+00000c0   0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4
+00000d0   5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9
+00000e0  \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3
+00000f0   4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8
+0000100   9 \n  0  1  2  3  4  5  6  7  8  9 \n  .  i  t
+0000110   e  r  s  =  5  3  8  0  7     i  n  p  u  t
+0000120   o  f  f  s  e  t  =  1  0  4  7  8  5  0  1
+0000130   o  u  t  p  u  t     o  f  f  s  e  t  =  1  4
+0000140   7  8  2  3  4  7  ,     n  =  5  6  1     s  t
+0000150   r  l  e  n  (  b  u  f  )  =  5  6  1 \n  .  0
+0000160   1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5
+0000170   6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n
+0000180   0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4
+0000190   5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9
+00001a0  \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3
+00001b0   4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8
+00001c0   9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2
+00001d0   3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7
+00001e0   8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1
+00001f0   2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6
+0000200   7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0
+0000210   1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5
+0000220   6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n
+0000230   0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4
+0000240   5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9
+0000250  \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3
+0000260   4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8
+0000270   9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2
+0000280   3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7
+0000290   8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1
+00002a0   2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6
+00002b0   7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0
+00002c0   1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5
+00002d0   6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n
+00002e0   0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4
+00002f0   5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9
+0000300  \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3
+0000310   4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8
+0000320   9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2
+0000330   3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7
+0000340   8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1
+0000350   2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6
+0000360   7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0
+0000370   1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5
+0000380   6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n
+0000390   .  i  t  e  r  s  =  5  3  8  0  8     i  n  p
+00003a0   u  t     o  f  f  s  e  t  =  1  0  4  7  8  6
+00003b0   9  9     o  u  t  p  u  t     o  f  f  s  e  t
+00003c0   =  1  4  7  8  2  9  9  0  ,     n  =  1  9  8
+00003d0      s  t  r  l  e  n  (  b  u  f  )  =  1  9  8
+00003e0  \n  .  0  1  2  3  4  5  6  7  8  9 \n  0  1  2
+00003f0   3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7
+0000400   8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1
+0000410   2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5  6
+0000420   7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n  0
+0000430   1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4  5
+0000440   6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9 \n
+0000450   0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3  4
+0000460   5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8  9
+0000470  \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2  3
+0000480   4  5  6  7  8  9 \n  0  1  2  3  4  5  6  7  8
+0000490   9 \n  0  1  2  3  4  5  6  7  8  9 \n  0  1  2
+00004a0   3  4  5  6  7  8  9 \n  .  i  t  e  r  s  =  5
+00004b0   3  8  0  9     i  n  p  u  t     o  f  f  s  e
+00004c0   t  =  1  0  4  7  8  9  0  8     o  u  t  p  u
+00004d0   t     o  f  f  s  e  t  =  1  4  7  8  3  2  7
+00004e0   0  ,     n  =  2  0  9     s  t  r  l  e  n  (
+00004f0   b  u  f  )  =  2  0  9 \n  .  0  1  2  3  4  5

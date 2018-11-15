@@ -3,7 +3,9 @@
 #include <bio.h>
 
 /*
-mk clean; mk all ; rm /tmp/test.file /tmp/test.readcontents; touch /tmp/test.file; ./6.pwriter10 /tmp/test.file &  echo 'echo kill>/proc/'$apid'/note'; ./6.reader10 /tmp/test.file /tmp/test.readcontents
+mk clean; mk all ; rm /tmp/test.file /tmp/test.readcontents; touch /tmp/test.file; ./6.reader10 /tmp/test.file /tmp/test.readcontents & echo 'echo kill>/proc/'$apid'/note'; ./6.pwriter10 /tmp/test.file
+
+sed -n '/iters=53806/,$p' /tmp/test.readcontents | xd -c
 */
 enum {
 	Len = 256,
