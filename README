@@ -1,4 +1,6 @@
 
+Fix: when reading a file being written by pwrite's, loop back to the offset where the null is found
+
 This test takes around 300MB space in /tmp/
 
 ; mk clean; mk all ; rm /tmp/test.file /tmp/test.readcontents; touch /tmp/test.file; ./6.reader10 /tmp/test.file /tmp/test.readcontents & echo 'echo kill>/proc/'$apid'/note'; ./6.pwriter10 /tmp/test.file
