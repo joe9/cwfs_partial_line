@@ -1,4 +1,6 @@
 
+This test takes around 300MB space in /tmp/
+
 mk clean; mk all ; rm /tmp/test.file /tmp/test.readcontents; touch /tmp/test.file; ./6.pwriter10 /tmp/test.file &  echo 'echo kill>/proc/'$apid'/note'; ./6.reader10 /tmp/test.file /tmp/test.readcontents
 rm -f *.[0568qv] *.a[0568qv] y.tab.? lex.yy.c y.debug y.output [0568qv].??* writer10 reader10 brdstr10 pwriter10 $CLEANFILES
 6c -FTVw writer10.c
@@ -11,3 +13,6 @@ rm -f *.[0568qv] *.a[0568qv] y.tab.? lex.yy.c y.debug y.output [0568qv].??* writ
 6l  -o 6.pwriter10 pwriter10.6
 echo kill>/proc/27518150/note
 iters=306978 n=198 strlen(buf)=176
+iters=443104 n=187 strlen(buf)=176
+iters=450406 n=154 strlen(buf)=132
+iters=498632 n=187 strlen(buf)=165
